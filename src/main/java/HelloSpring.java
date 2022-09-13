@@ -3,9 +3,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloSpring {
-    public static void main(String... args) {
+    private static ApplicationContext context = new ClassPathXmlApplicationContext("spring/app-context.xml");
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring/app-context.xml");
+    public static void main(String... args) {
 
         MessageRenderer renderer = context.getBean("renderer", MessageRenderer.class);
         renderer.render();
